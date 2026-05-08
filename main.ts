@@ -1,10 +1,3 @@
-function Love2 () {
-    if (input.buttonIsPressed(Button.A)) {
-        radio.setGroup(1)
-        radio.sendNumber(0)
-        basic.showIcon(IconNames.Heart)
-    }
-}
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     if (true) {
         if (Money >= 5) {
@@ -14,10 +7,15 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
         }
     }
 })
+let Love = 0
 let Money = 0
 let Fat = false
 Money = 10
 basic.forever(function () {
+    if (input.buttonIsPressed(Button.A)) {
+        basic.showIcon(IconNames.Happy)
+        Love += 1
+    }
     if (Fat == true) {
     	
     }
