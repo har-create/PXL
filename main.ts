@@ -1,13 +1,3 @@
-input.onPinPressed(TouchPin.P0, function () {
-    basic.showString("BUY FOOD?")
-    if (input.buttonIsPressed(Button.A)) {
-        if (Money >= 5) {
-            basic.showString("FOOD BOUGHT")
-        } else {
-            basic.showString("" + (5 - Money))
-        }
-    }
-})
 function Love2 () {
     if (input.buttonIsPressed(Button.A)) {
         radio.setGroup(1)
@@ -15,12 +5,21 @@ function Love2 () {
         basic.showIcon(IconNames.Heart)
     }
 }
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    if (true) {
+        if (Money >= 5) {
+            basic.showString("FOOD BOUGHT")
+        } else {
+            basic.showString("" + (5 - Money))
+        }
+    }
+})
 let Money = 0
+let Fat = false
 Money = 10
 basic.forever(function () {
-    let Fat = 0
-    if (Fat == 1) {
-        basic.showString("PET IS FAT")
+    if (Fat == true) {
+    	
     }
     if (true) {
         basic.showLeds(`
